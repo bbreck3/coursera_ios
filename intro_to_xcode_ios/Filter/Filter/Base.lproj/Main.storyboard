@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,18 +18,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goq-I0-2dW">
-                                <rect key="frame" x="41" y="54" width="283" height="308"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SV4-ui-cA3">
+                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hTr-qV-bRs">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCI-fT-fkC">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="6cj-OV-kYE"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="78H-1v-Cku"/>
+                                                    <constraint firstAttribute="height" constant="44" id="nYc-XZ-8XH"/>
+                                                </constraints>
+                                                <state key="normal" title="New Image"/>
+                                                <connections>
+                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5m-hX-l3C"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHG-MX-3HW">
+                                                <rect key="frame" x="150" y="0.0" width="150" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="6qz-AC-nbT"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ZEM-eX-aYy"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="ZHG-hw-NZP"/>
+                                                </constraints>
+                                                <state key="normal" title="Filter"/>
+                                                <connections>
+                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4I-sR-Zdz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJh-Hc-keT">
+                                                <rect key="frame" x="300" y="0.0" width="150" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Ro2-If-1n1"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="Xkg-k4-i9a"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="q9p-wE-xCV"/>
+                                                </constraints>
+                                                <state key="normal" title="Compare"/>
+                                                <connections>
+                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k20-rF-Y0V"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x6-eY-2uJ">
+                                                <rect key="frame" x="450" y="0.0" width="150" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="7lA-6s-44n"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Kqf-Jm-fQD"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="X4E-fN-0P2"/>
+                                                </constraints>
+                                                <state key="normal" title="Share"/>
+                                                <connections>
+                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N6j-Ip-ruY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hTr-qV-bRs" firstAttribute="leading" secondItem="SV4-ui-cA3" secondAttribute="leading" id="Ahg-lI-woC"/>
+                                    <constraint firstAttribute="trailing" secondItem="hTr-qV-bRs" secondAttribute="trailing" id="YaQ-dy-Y6W"/>
+                                    <constraint firstAttribute="bottom" secondItem="hTr-qV-bRs" secondAttribute="bottom" id="giu-0A-Uqq"/>
+                                    <constraint firstItem="hTr-qV-bRs" firstAttribute="top" secondItem="SV4-ui-cA3" secondAttribute="top" id="wvJ-kl-A1F"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="goq-I0-2dW">
+                                <rect key="frame" x="-63" y="14" width="663" height="498"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCI-fT-fkC">
-                                <rect key="frame" x="46" y="362" width="278" height="30"/>
-                                <state key="normal" title="Show Filtered Image"/>
-                                <connections>
-                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5m-hX-l3C"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SV4-ui-cA3" secondAttribute="trailing" id="3vi-5H-Phy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="goq-I0-2dW" secondAttribute="trailing" constant="-20" id="IZg-6E-Lso"/>
+                            <constraint firstAttribute="trailing" secondItem="goq-I0-2dW" secondAttribute="trailing" constant="240" id="Jyj-hJ-zsf"/>
+                            <constraint firstItem="goq-I0-2dW" firstAttribute="leading" secondItem="ovR-Pw-gwJ" secondAttribute="leading" id="NwX-CT-3YZ"/>
+                            <constraint firstItem="goq-I0-2dW" firstAttribute="leading" secondItem="ovR-Pw-gwJ" secondAttribute="leadingMargin" constant="-83" id="SNM-X2-st7"/>
+                            <constraint firstItem="SV4-ui-cA3" firstAttribute="top" secondItem="goq-I0-2dW" secondAttribute="bottom" id="Sr5-7f-lBz"/>
+                            <constraint firstAttribute="trailing" secondItem="goq-I0-2dW" secondAttribute="trailing" id="c6Y-ud-b0M"/>
+                            <constraint firstItem="goq-I0-2dW" firstAttribute="top" secondItem="ovR-Pw-gwJ" secondAttribute="topMargin" constant="14" id="cYV-Cj-HyH"/>
+                            <constraint firstItem="goq-I0-2dW" firstAttribute="leading" secondItem="ovR-Pw-gwJ" secondAttribute="leading" constant="40" id="mcO-I6-Qxh"/>
+                            <constraint firstItem="8Ck-cp-U14" firstAttribute="top" secondItem="SV4-ui-cA3" secondAttribute="bottom" id="xLb-XX-aTm"/>
+                            <constraint firstItem="goq-I0-2dW" firstAttribute="top" secondItem="pRR-VM-iqc" secondAttribute="bottom" id="yCl-DO-Ipm"/>
+                            <constraint firstItem="SV4-ui-cA3" firstAttribute="leading" secondItem="ovR-Pw-gwJ" secondAttribute="leading" id="yIv-KR-wHd"/>
+                            <constraint firstItem="goq-I0-2dW" firstAttribute="top" secondItem="pRR-VM-iqc" secondAttribute="bottom" constant="33" id="ydl-2v-FGm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jyj-hJ-zsf"/>
+                                <exclude reference="NwX-CT-3YZ"/>
+                                <exclude reference="c6Y-ud-b0M"/>
+                                <exclude reference="mcO-I6-Qxh"/>
+                                <exclude reference="yCl-DO-Ipm"/>
+                                <exclude reference="ydl-2v-FGm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -39,7 +123,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="397"/>
+            <point key="canvasLocation" x="204" y="-11"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sample" width="75" height="75"/>
+    </resources>
 </document>
