@@ -15,6 +15,7 @@
 		D42E16FB2206963B00D15282 /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E16FA2206963B00D15282 /* FilterTests.swift */; };
 		D42E17062206963B00D15282 /* FilterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E17052206963B00D15282 /* FilterUITests.swift */; };
 		D42E17142206973700D15282 /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E17132206973700D15282 /* RGBAImage.swift */; };
+		D42E17162213AA1900D15282 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E17152213AA1900D15282 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D42E17052206963B00D15282 /* FilterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterUITests.swift; sourceTree = "<group>"; };
 		D42E17072206963B00D15282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D42E17132206973700D15282 /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
+		D42E17152213AA1900D15282 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D42E16E52206963A00D15282 /* AppDelegate.swift */,
 				D42E17132206973700D15282 /* RGBAImage.swift */,
 				D42E16E72206963A00D15282 /* ViewController.swift */,
+				D42E17152213AA1900D15282 /* TableViewController.swift */,
 				D42E16E92206963A00D15282 /* Main.storyboard */,
 				D42E16EC2206963A00D15282 /* Assets.xcassets */,
 				D42E16EE2206963A00D15282 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				D42E16E82206963A00D15282 /* ViewController.swift in Sources */,
 				D42E17142206973700D15282 /* RGBAImage.swift in Sources */,
 				D42E16E62206963A00D15282 /* AppDelegate.swift in Sources */,
+				D42E17162213AA1900D15282 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +457,7 @@
 		D42E17112206963B00D15282 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
 				INFOPLIST_FILE = FilterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FilterUITests;
@@ -491,6 +496,7 @@
 				D42E170C2206963B00D15282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D42E170D2206963B00D15282 /* Build configuration list for PBXNativeTarget "FilterTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +505,7 @@
 				D42E170F2206963B00D15282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D42E17102206963B00D15282 /* Build configuration list for PBXNativeTarget "FilterUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +514,7 @@
 				D42E17122206963B00D15282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

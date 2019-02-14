@@ -8,27 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     var filterImage: UIImage?
     @IBOutlet var imageView: UIImageView!
     
-    @IBOutlet var imageToggle: UIButton!
+    @IBOutlet var secondaryMenu: UIView!
+    @IBOutlet var bottumMenu: UIView!
     
-    @IBAction func onImageToggled(sender: UIButton) {
-        if imageToggle.selected {
-            let image = UIImage(named: "sample")!
-            imageView.image = image
-            imageToggle.selected = false
-        }else{
-            imageView.image = filterImage;
-            imageToggle.selected = true
-        }
-    }
-        override func viewDidLoad() {
+    @IBOutlet var filterButton: UIButton!
+            override func viewDidLoad() {
         super.viewDidLoad()
+        secondaryMenu.translatesAutoresizingMaskIntoConstraints = false
+        secondaryMenu.backgroundColor=UIColor.whiteColor().colorWithAlphaComponent(0.5)
+                
+                
+                
         // Do any additional setup after loading the view, typically from a nib.
-        imageToggle.setTitle("Show Befroe Image", forState: .Selected)
+        //imageToggle.setTitle("Show Befroe Image", forState: .Selected)
         let image = UIImage(named: "sample")!
         
         // Process the image!
@@ -63,6 +60,87 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func onShare(sender: AnyObject) {
+        let activityController = UIActivityViewController(activityItems: [imageView.image!],applicationActivities: nil)
+        presentViewController(activityController, animated: true, completion: nil)
+    }
+    @IBAction func onFilter(sender: UIButton) {
+        if(sender.selected){
+            hideSecondaryMenu()
+            sender.selected=false
+        }else{
+            showSecondaryMenu()
+            sender.selected = true
+        }
+    }
+    
+    @IBAction func onNewPhoto(sender: AnyObject) {
+        let actionSheet = UIAlertController(title: "New Photo", message: nil,
+                                            preferredStyle: .ActionSheet);
+        actionSheet.addAction(UIAlertAction(title:"Camera", style: .Default,handler: {action in
+            self.showCamera()
+        }))
+        actionSheet.addAction(UIAlertAction(title:"Album", style: .Default,handler: {action in
+            self.showAlbum()
+        }))
+        actionSheet.addAction(UIAlertAction(title:"Cancel", style: .Cancel,handler: {action in
+            
+        }))
+        
+        self.presentViewController(actionSheet, animated: true, completion:nil)
+        
+    }
+    
+    func showCamera(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .Camera
+        presentViewController(cameraPicker, animated: true, completion:nil)
+        
+    }
+    
+    func showAlbum(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .PhotoLibrary
+        presentViewController(cameraPicker, animated: true, completion:nil)
+    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        dismissViewControllerAnimated(true, completion: nil)
+        if let image  = info[UIImagePickerControllerOriginalImage] as? UIImage{
+                imageView.image = image
+        }
+    }
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func showSecondaryMenu(){
+        view.addSubview(secondaryMenu)
+        
+        let bottomConstraint = secondaryMenu.bottomAnchor.constraintEqualToAnchor(bottumMenu.topAnchor)
+        let leftConstraint = secondaryMenu.leftAnchor.constraintEqualToAnchor(view.leftAnchor)
+        let rightConstraint = secondaryMenu.rightAnchor.constraintEqualToAnchor(view.rightAnchor)
+        let hightConstrait = secondaryMenu.heightAnchor.constraintEqualToConstant(44)
+        
+        NSLayoutConstraint.activateConstraints([bottomConstraint,leftConstraint,rightConstraint,hightConstrait])
+        
+        view.layoutIfNeeded()
+        self.secondaryMenu.alpha = 0
+        UIView.animateWithDuration(0.5){
+            self.secondaryMenu.alpha=1.0
+        }
+    }
+    func hideSecondaryMenu(){
+        UIView.animateWithDuration(0.5,animations:{
+            
+        }) { completed in
+            if completed == true{
+            self.secondaryMenu.removeFromSuperview()
+            }
+        }
     }
 
 

@@ -18,13 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="goq-I0-2dW">
+                                <rect key="frame" x="-63" y="14" width="663" height="498"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SV4-ui-cA3">
                                 <rect key="frame" x="0.0" y="512" width="600" height="44"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hTr-qV-bRs">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="x2V-xc-UVe">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCI-fT-fkC">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCI-fT-fkC">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="6cj-OV-kYE"/>
@@ -33,35 +36,11 @@
                                                 </constraints>
                                                 <state key="normal" title="New Image"/>
                                                 <connections>
-                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5m-hX-l3C"/>
+                                                    <action selector="onNewPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLc-yc-206"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHG-MX-3HW">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x6-eY-2uJ">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="6qz-AC-nbT"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ZEM-eX-aYy"/>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="ZHG-hw-NZP"/>
-                                                </constraints>
-                                                <state key="normal" title="Filter"/>
-                                                <connections>
-                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4I-sR-Zdz"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJh-Hc-keT">
-                                                <rect key="frame" x="300" y="0.0" width="150" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="Ro2-If-1n1"/>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="Xkg-k4-i9a"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="q9p-wE-xCV"/>
-                                                </constraints>
-                                                <state key="normal" title="Compare"/>
-                                                <connections>
-                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k20-rF-Y0V"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x6-eY-2uJ">
-                                                <rect key="frame" x="450" y="0.0" width="150" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="7lA-6s-44n"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Kqf-Jm-fQD"/>
@@ -69,7 +48,28 @@
                                                 </constraints>
                                                 <state key="normal" title="Share"/>
                                                 <connections>
-                                                    <action selector="onImageToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N6j-Ip-ruY"/>
+                                                    <action selector="onShare:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYa-Y9-UDO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJh-Hc-keT">
+                                                <rect key="frame" x="300" y="0.0" width="150" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Ro2-If-1n1"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="Xkg-k4-i9a"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="q9p-wE-xCV"/>
+                                                </constraints>
+                                                <state key="normal" title="Compare"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSZ-fL-Ws9">
+                                                <rect key="frame" x="450" y="0.0" width="150" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="26d-Yu-nSP"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="DPD-Kr-S3k"/>
+                                                    <constraint firstAttribute="height" constant="44" id="grY-60-5qY"/>
+                                                </constraints>
+                                                <state key="normal" title="Filter"/>
+                                                <connections>
+                                                    <action selector="onFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gZh-pI-3wQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -77,15 +77,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="hTr-qV-bRs" firstAttribute="leading" secondItem="SV4-ui-cA3" secondAttribute="leading" id="Ahg-lI-woC"/>
-                                    <constraint firstAttribute="trailing" secondItem="hTr-qV-bRs" secondAttribute="trailing" id="YaQ-dy-Y6W"/>
-                                    <constraint firstAttribute="bottom" secondItem="hTr-qV-bRs" secondAttribute="bottom" id="giu-0A-Uqq"/>
-                                    <constraint firstItem="hTr-qV-bRs" firstAttribute="top" secondItem="SV4-ui-cA3" secondAttribute="top" id="wvJ-kl-A1F"/>
+                                    <constraint firstItem="x2V-xc-UVe" firstAttribute="top" secondItem="SV4-ui-cA3" secondAttribute="top" id="3dr-ed-mxP"/>
+                                    <constraint firstItem="x2V-xc-UVe" firstAttribute="width" secondItem="SV4-ui-cA3" secondAttribute="width" id="TA7-e6-TMf"/>
+                                    <constraint firstItem="x2V-xc-UVe" firstAttribute="leading" secondItem="SV4-ui-cA3" secondAttribute="leading" id="w0v-DE-MzF"/>
+                                    <constraint firstAttribute="bottom" secondItem="x2V-xc-UVe" secondAttribute="bottom" id="zEQ-vO-dAI"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="goq-I0-2dW">
-                                <rect key="frame" x="-63" y="14" width="663" height="498"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -117,13 +114,105 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageToggle" destination="yCI-fT-fkC" id="h6u-2r-GAh"/>
+                        <outlet property="bottumMenu" destination="SV4-ui-cA3" id="aUW-li-1RE"/>
+                        <outlet property="filterButton" destination="WSZ-fL-Ws9" id="HQw-AV-3bA"/>
                         <outlet property="imageView" destination="goq-I0-2dW" id="96M-MI-JuI"/>
+                        <outlet property="secondaryMenu" destination="Rqh-2d-fbb" id="lGf-Mp-RRq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Rqh-2d-fbb">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-hG-wRp">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-U9-SHy">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
+                                    <state key="normal" title="Red"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-Y3-UP5">
+                                    <rect key="frame" x="48" y="0.0" width="48" height="128"/>
+                                    <state key="normal" title="Green"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yd-E0-vlr">
+                                    <rect key="frame" x="96" y="0.0" width="48" height="128"/>
+                                    <state key="normal" title="Blue"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-Sv-Njx">
+                                    <rect key="frame" x="144" y="0.0" width="48" height="128"/>
+                                    <state key="normal" title="Yellow"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34j-qo-EAR">
+                                    <rect key="frame" x="192" y="0.0" width="48" height="128"/>
+                                    <state key="normal" title="Purple"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="AF2-hG-wRp" firstAttribute="top" secondItem="Rqh-2d-fbb" secondAttribute="top" id="4Ld-U7-zey"/>
+                        <constraint firstAttribute="bottom" secondItem="AF2-hG-wRp" secondAttribute="bottom" id="UIP-jf-XTN"/>
+                        <constraint firstItem="AF2-hG-wRp" firstAttribute="leading" secondItem="Rqh-2d-fbb" secondAttribute="leading" id="ktF-yu-I7x"/>
+                        <constraint firstAttribute="trailing" secondItem="AF2-hG-wRp" secondAttribute="trailing" id="tXU-81-vsi"/>
+                    </constraints>
+                </view>
             </objects>
-            <point key="canvasLocation" x="204" y="-11"/>
+            <point key="canvasLocation" x="27" y="-45"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Rnf-k9-ipe">
+            <objects>
+                <viewController id="Npa-9W-7m7" customClass="TableViewController" customModule="Filter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e2d-mP-wsb"/>
+                        <viewControllerLayoutGuide type="bottom" id="YBn-v3-6rE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jsj-XT-cVh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RlY-KV-mMy">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" textLabel="TMo-zt-ZxX" style="IBUITableViewCellStyleDefault" id="2bJ-bA-QrS">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bJ-bA-QrS" id="lFY-3l-Pqt">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Filter Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TMo-zt-ZxX">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RlY-KV-mMy" secondAttribute="trailing" id="Ddf-8P-vA4"/>
+                            <constraint firstItem="YBn-v3-6rE" firstAttribute="top" secondItem="RlY-KV-mMy" secondAttribute="bottom" id="FZX-c1-Osf"/>
+                            <constraint firstItem="RlY-KV-mMy" firstAttribute="top" secondItem="e2d-mP-wsb" secondAttribute="bottom" id="l9u-QJ-bcX"/>
+                            <constraint firstItem="RlY-KV-mMy" firstAttribute="leading" secondItem="jsj-XT-cVh" secondAttribute="leading" id="lY6-jB-Uh2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="RlY-KV-mMy" id="1js-af-Wh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKq-vj-cjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="-45"/>
         </scene>
     </scenes>
     <resources>
