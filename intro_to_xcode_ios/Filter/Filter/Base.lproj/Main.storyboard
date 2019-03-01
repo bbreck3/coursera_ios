@@ -131,22 +131,37 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-U9-SHy">
                                     <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Red"/>
+                                    <connections>
+                                        <action selector="Red:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZKR-Zn-8N4"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-Y3-UP5">
                                     <rect key="frame" x="48" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Green"/>
+                                    <connections>
+                                        <action selector="Green:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J8U-0O-KS8"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yd-E0-vlr">
                                     <rect key="frame" x="96" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Blue"/>
+                                    <connections>
+                                        <action selector="Blue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bkc-Mp-kzw"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bzi-Sv-Njx">
                                     <rect key="frame" x="144" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Yellow"/>
+                                    <connections>
+                                        <action selector="Yellow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VgF-Xs-10N"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34j-qo-EAR">
                                     <rect key="frame" x="192" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Purple"/>
+                                    <connections>
+                                        <action selector="Purple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TlK-Cg-2f8"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

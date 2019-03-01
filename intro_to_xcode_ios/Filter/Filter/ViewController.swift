@@ -117,7 +117,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    
     func showSecondaryMenu(){
+        
         view.addSubview(secondaryMenu)
         
         let bottomConstraint = secondaryMenu.bottomAnchor.constraintEqualToAnchor(bottumMenu.topAnchor)
@@ -142,6 +144,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
+    
+    @IBAction func Red(sender: UIButton) {
+        print("Red")
+    }
+    
+    @IBAction func Green(sender: UIButton) {
+        print("Green")
+    }
+    
+    @IBAction func Blue(sender: UIButton) {
+        print("Blue")
+    }
+    @IBAction func Yellow(sender: UIButton) {
+        print("Yellow")
+    }
+    @IBAction func Purple(sender: UIButton) {
+        print("Purple")
+
+    }
+    
 
 
 }
