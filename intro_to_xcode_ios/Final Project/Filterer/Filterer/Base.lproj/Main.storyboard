@@ -49,11 +49,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-2N-f93">
                                                 <rect key="frame" x="300" y="0.0" width="150" height="44"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="9IM-QO-dIA"/>
                                                     <constraint firstAttribute="height" constant="44" id="zgf-3k-aR7"/>
                                                 </constraints>
                                                 <state key="normal" title="Compare"/>
                                                 <connections>
-                                                    <action selector="compareImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gfF-fZ-unq"/>
+                                                    <action selector="compareImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PPa-Rw-oox"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Leg-ry-Zqw">
@@ -91,6 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomMenu" destination="JNF-wb-wwY" id="jTm-2q-PDu"/>
+                        <outlet property="compareImage" destination="tPg-2N-f93" id="3P4-gS-EJx"/>
                         <outlet property="filterButton" destination="C6B-1F-j0K" id="6Kf-1q-zun"/>
                         <outlet property="imageView" destination="aND-Em-4Dd" id="vbi-rB-DhQ"/>
                         <outlet property="secondaryMenu" destination="ePS-oG-ZHP" id="Be7-JW-Iwe"/>

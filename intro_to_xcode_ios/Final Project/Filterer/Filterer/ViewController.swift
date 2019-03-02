@@ -14,8 +14,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet var imageView: UIImageView!
     
+    
     @IBOutlet var secondaryMenu: UIView!
     @IBOutlet var bottomMenu: UIView!
+    
+    @IBOutlet weak var compareImage: UIButton!
+    
+    
     
     @IBOutlet var filterButton: UIButton!
     var originalImage = UIImage(named:"scenery")
@@ -24,6 +29,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         secondaryMenu.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         secondaryMenu.translatesAutoresizingMaskIntoConstraints = false
+        
+        compareImage.enabled = false;
     
     }
 
@@ -82,11 +89,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: Filter Menu
     @IBAction func onFilter(sender: UIButton) {
         if (sender.selected) {
+            compareImage.enabled = false;
             hideSecondaryMenu()
             sender.selected = false
         } else {
             showSecondaryMenu()
             sender.selected = true
+            compareImage.enabled = true;
         }
     }
     
@@ -119,18 +128,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    
+   
     @IBAction func compareImage(sender: UIButton) {
         if (sender.selected) {
-            //hideSecondaryMenu()
-            imageView.image=filteredImage
-            sender.selected = false
-        } else {
-            //showSecondaryMenu()
-            imageView.image=originalImage
-            sender.selected = true
-        }
+                //hideSecondaryMenu()
+                imageView.image=filteredImage
+                sender.selected = false
+            } else {
+                //showSecondaryMenu()
+                imageView.image=originalImage
+                sender.selected = true
+            }
 
-        
     }
     @IBAction func greysacle(sender: UIButton) {
         let image = originalImage!
