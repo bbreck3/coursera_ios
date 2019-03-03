@@ -20,6 +20,9 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="536"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SLY-bh-KH3" userLabel="Image View2">
+                                <rect key="frame" x="99" y="20" width="404" height="536"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNF-wb-wwY">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <subviews>
@@ -85,9 +88,13 @@
                             <constraint firstItem="aND-Em-4Dd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="AH5-w4-n1a"/>
                             <constraint firstItem="JNF-wb-wwY" firstAttribute="top" secondItem="aND-Em-4Dd" secondAttribute="bottom" id="GY2-gV-4Y4"/>
                             <constraint firstItem="aND-Em-4Dd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hr8-fN-WFn"/>
+                            <constraint firstItem="JNF-wb-wwY" firstAttribute="top" secondItem="SLY-bh-KH3" secondAttribute="bottom" id="Knx-IS-U1B"/>
+                            <constraint firstItem="SLY-bh-KH3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="99" id="PAN-zc-7TO"/>
                             <constraint firstAttribute="trailing" secondItem="aND-Em-4Dd" secondAttribute="trailing" id="VAw-Rk-Dte"/>
                             <constraint firstItem="JNF-wb-wwY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ezb-a7-a7E"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JNF-wb-wwY" secondAttribute="bottom" id="gS7-Xm-JhX"/>
+                            <constraint firstItem="SLY-bh-KH3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="kgy-34-DdG"/>
+                            <constraint firstAttribute="trailing" secondItem="SLY-bh-KH3" secondAttribute="trailing" constant="97" id="xKw-ru-7sp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,6 +102,7 @@
                         <outlet property="compareImage" destination="tPg-2N-f93" id="3P4-gS-EJx"/>
                         <outlet property="filterButton" destination="C6B-1F-j0K" id="6Kf-1q-zun"/>
                         <outlet property="imageView" destination="aND-Em-4Dd" id="vbi-rB-DhQ"/>
+                        <outlet property="imageView2" destination="SLY-bh-KH3" id="DWJ-sD-cxz"/>
                         <outlet property="secondaryMenu" destination="ePS-oG-ZHP" id="Be7-JW-Iwe"/>
                     </connections>
                 </viewController>

@@ -13,12 +13,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var imageView2: UIImageView!
+    
+    
     
     
     @IBOutlet var secondaryMenu: UIView!
     @IBOutlet var bottomMenu: UIView!
     
     @IBOutlet weak var compareImage: UIButton!
+   
     
     
     
@@ -31,7 +35,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         secondaryMenu.translatesAutoresizingMaskIntoConstraints = false
         
         compareImage.enabled = false;
-    
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
+        imageView.userInteractionEnabled=true;
+        imageView.addGestureRecognizer(singleTap)
+        imageView.image = originalImage
+        
+        imageView2.userInteractionEnabled=true;
+        imageView2.addGestureRecognizer(singleTap)
+        imageView2.image = originalImage
     }
 
     // MARK: Share
@@ -85,6 +97,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    //Action
+    func tapDetected(sender: UITapGestureRecognizer) {
+        
+        if(sender.state == .Ended){
+            print("Ended")
+            imageView.image = filteredImage
+            imageView2.image = filteredImage
+            
+            sleep(1)
+        }
+        print("Other")
+        imageView.image = originalImage
+        imageView2.image = originalImage
+    }
+    
     
     // MARK: Filter Menu
     @IBAction func onFilter(sender: UIButton) {
@@ -133,11 +160,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func compareImage(sender: UIButton) {
         if (sender.selected) {
                 //hideSecondaryMenu()
-                imageView.image=filteredImage
+                imageView2.image=filteredImage
                 sender.selected = false
             } else {
                 //showSecondaryMenu()
-                imageView.image=originalImage
+                imageView2.image=originalImage
                 sender.selected = true
             }
 
@@ -149,13 +176,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }else{
+            
             let ip = ImageProcessor()
             ip.processImage(image)
             let f = filterOptions()
             let imageRGBA = ip.filterImage(image, filterOption: f.f4) //<-- Change the option here
-            imageView.image = imageRGBA.toUIImage()
-            filteredImage = imageRGBA.toUIImage()
+            imageView.image = image
+            imageView2.image = imageRGBA.toUIImage()
+            self.imageView.alpha = 1.0
+            self.imageView2.alpha = 0
+            UIView.animateWithDuration(1) {
+                self.imageView.alpha=0
+                self.imageView2.alpha=1.0
+            }
+           
             print("Greyscale")
+            sender.selected = false
+            filteredImage = imageRGBA.toUIImage()
         }
     }
     @IBAction func fiftyPercent(sender: UIButton) {
@@ -169,7 +206,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             ip.processImage(image)
             let f = filterOptions()
             let imageRGBA = ip.filterImage(image, filterOption: f.f2) //<-- Change the option here
-            imageView.image = imageRGBA.toUIImage()
+            imageView.image = image
+            imageView2.image = imageRGBA.toUIImage()
+            self.imageView.alpha = 1.0
+            self.imageView2.alpha = 0
+            UIView.animateWithDuration(1) {
+                self.imageView.alpha=0
+                self.imageView2.alpha=1.0
+            }
+            
+            print("Greyscale")
+            sender.selected = false
+            filteredImage = imageRGBA.toUIImage()
             print("50%")
         }
     }
@@ -184,7 +232,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             ip.processImage(image)
             let f = filterOptions()
             let imageRGBA = ip.filterImage(image, filterOption: f.f1) //<-- Change the option here
-            imageView.image = imageRGBA.toUIImage()
+            imageView.image = image
+            imageView2.image = imageRGBA.toUIImage()
+            self.imageView.alpha = 1.0
+            self.imageView2.alpha = 0
+            UIView.animateWithDuration(1) {
+                self.imageView.alpha=0
+                self.imageView2.alpha=1.0
+            }
+            
+            print("Greyscale")
+            sender.selected = false
+            filteredImage = imageRGBA.toUIImage()
             print("25%")
         }
     }
@@ -200,7 +259,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             ip.processImage(image)
             let f = filterOptions()
             let imageRGBA = ip.filterImage(image, filterOption: f.f3) //<-- Change the option here
-            imageView.image = imageRGBA.toUIImage()
+            imageView.image = image
+            imageView2.image = imageRGBA.toUIImage()
+            self.imageView.alpha = 1.0
+            self.imageView2.alpha = 0
+            UIView.animateWithDuration(1) {
+                self.imageView.alpha=0
+                self.imageView2.alpha=1.0
+            }
+            
+            print("Greyscale")
+            sender.selected = false
+            filteredImage = imageRGBA.toUIImage()
             print("75%")
         }
     }
@@ -216,7 +286,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             ip.processImage(image)
             let f = filterOptions()
             let imageRGBA = ip.filterImage(image, filterOption: f.f5) //<-- Change the option here
-            imageView.image = imageRGBA.toUIImage()
+            imageView.image = image
+            imageView2.image = imageRGBA.toUIImage()
+            self.imageView.alpha = 1.0
+            self.imageView2.alpha = 0
+            UIView.animateWithDuration(1) {
+                self.imageView.alpha=0
+                self.imageView2.alpha=1.0
+            }
+            
+            print("Greyscale")
+            sender.selected = false
+            filteredImage = imageRGBA.toUIImage()
             print("random")
         }
     }
