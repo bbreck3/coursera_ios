@@ -14,21 +14,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var imageView2: UIImageView!
-    
-    
-    
-    
+
     @IBOutlet var secondaryMenu: UIView!
     @IBOutlet var bottomMenu: UIView!
     
     @IBOutlet weak var compareImage: UIButton!
+    @IBOutlet weak var greyScaleBtn: UIButton!
    
+    @IBOutlet weak var fiftyPercBtn: UIButton!
+    @IBOutlet weak var twentyFivePercBtn: UIButton!
+    @IBOutlet weak var seventyFivePercBtn: UIButton!
+    @IBOutlet weak var randomBtn: UIButton!
+    @IBOutlet weak var editBtn: UIButton!
+    
+    
     
     
     
     @IBOutlet var filterButton: UIButton!
     var originalImage = UIImage(named:"scenery")
     var filteredImage: UIImage?
+    
+    @IBOutlet weak var sliderBtn: UISlider!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         secondaryMenu.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
@@ -44,6 +55,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView2.userInteractionEnabled=true;
         imageView2.addGestureRecognizer(singleTap)
         imageView2.image = originalImage
+        
+        let greyscaleImage = greyScale()
+        greyScaleBtn.setBackgroundImage(greyscaleImage, forState: .Normal)
+        
+        let fiftyPercImage = fiftyPerc()
+        fiftyPercBtn.setBackgroundImage(fiftyPercImage, forState: .Normal)
+
+        
+        let twentyFivePercImage = twentFivePerc()
+        twentyFivePercBtn.setBackgroundImage(twentyFivePercImage, forState: .Normal)
+
+        
+        let seventyFivePerImage = seventyFivePer()
+        seventyFivePercBtn.setBackgroundImage(seventyFivePerImage, forState: .Normal)
+
+        
+        let randomImage = randomPerc()
+        randomBtn.setBackgroundImage(randomImage, forState: .Normal)
+        
+        sliderBtn.hidden = true
+        editBtn.enabled = false
+
+        
     }
 
     // MARK: Share
@@ -117,10 +151,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func onFilter(sender: UIButton) {
         if (sender.selected) {
             compareImage.enabled = false;
+            editBtn.enabled = false
             hideSecondaryMenu()
             sender.selected = false
         } else {
             showSecondaryMenu()
+             editBtn.enabled = true
             sender.selected = true
             compareImage.enabled = true;
         }
@@ -302,6 +338,102 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    
+    
+   
+    @IBAction func edit(sender: UIButton) {
+        filterButton.selected = false
+        if(sender.selected){
+            editBtn.selected = false
+        
+            
+            sliderBtn.hidden = true
+            
+        }else{
+            editBtn.selected = true
+            hideSecondaryMenu()
+            sliderBtn.hidden = false
+        }
 
+    }
+    
+    @IBAction func silder(sender: UISlider) {
+        
+        let currentValue = Int(sender.value)
+        let image = change_contrast(imageView.image!, contrast: currentValue)
+        imageView.image = image
+        
+//        let alert = UIAlertController(title: "Alert", message: String(currentValue), preferredStyle: UIAlertControllerStyle.Alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    func greyScale() -> UIImage{
+        let image  = originalImage!
+        let ip = ImageProcessor()
+        ip.processImage(image)
+        let f = filterOptions()
+        let imageRGBA = ip.filterImage(image, filterOption: f.f4) //<-- Change the option here
+        return imageRGBA.toUIImage()!
+
+    }
+    func fiftyPerc() -> UIImage{
+        let image  = originalImage!
+        let ip = ImageProcessor()
+        ip.processImage(image)
+        let f = filterOptions()
+        let imageRGBA = ip.filterImage(image, filterOption: f.f2) //<-- Change the option here
+        return imageRGBA.toUIImage()!
+
+    }
+    func twentFivePerc() -> UIImage{
+        let image  = originalImage!
+        let ip = ImageProcessor()
+        ip.processImage(image)
+        let f = filterOptions()
+        let imageRGBA = ip.filterImage(image, filterOption: f.f1) //<-- Change the option here
+        return imageRGBA.toUIImage()!
+
+    }
+    func seventyFivePer() -> UIImage{
+        let image  = originalImage!
+        let ip = ImageProcessor()
+        ip.processImage(image)
+        let f = filterOptions()
+        let imageRGBA = ip.filterImage(image, filterOption: f.f3) //<-- Change the option here
+        return imageRGBA.toUIImage()!
+    }
+    func randomPerc() -> UIImage{
+        let image  = originalImage!
+        let ip = ImageProcessor()
+        ip.processImage(image)
+        let f = filterOptions()
+        let imageRGBA = ip.filterImage(image, filterOption: f.f5) //<-- Change the option here
+        return imageRGBA.toUIImage()!
+    }
+    func change_contrast(image: UIImage, contrast: Int) -> UIImage{
+        print(contrast)
+        var myRGBA = RGBAImage(image: image)!
+        for y in 0..<myRGBA.height{
+            for x in 0..<myRGBA.width{
+                let index = y * myRGBA.width + x
+                //print(index)
+                var pixel = myRGBA.pixels[index]
+//                let redDiff = Int(pixel.red)-avgRed
+//                let greenDiff = Int(pixel.green)-avgGreen
+//                let blueDiff = Int(pixel.blue)-avgBlue
+        
+                let red = Double(pixel.red) * Double(contrast)
+                let blue = Double(pixel.blue) * Double(contrast)
+                let green = Double(pixel.green) * Double(contrast)
+                pixel.red = UInt8(max(0,min(255,red)))
+                pixel.green = UInt8(max(0,min(255,green)))
+                pixel.blue = UInt8(max(0,min(255,blue)))
+                myRGBA.pixels[index]=pixel
+            }
+        }
+        return myRGBA.toUIImage()!
+    }
 }
 
