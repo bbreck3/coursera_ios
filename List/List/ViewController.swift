@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
 
+    
     @IBOutlet weak var tableView: UITableView!
     
     let textCellIdentifier = "item"
@@ -24,9 +25,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        for i in 0...1000 {
 //            data.append("\(i)")
 //        }
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
+        tableView.delegate=self
+        tableView.dataSource=self
+        }
     
     // MARK:  UITextFieldDelegate Methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -58,8 +59,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         data.append("\(count)")
         count+=1
         tableView.reloadData()
-        
     }
+    
     
 }
 

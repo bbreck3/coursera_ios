@@ -58,13 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "List/ViewController.swift"
-            timestampString = "579059209.574479"
+            timestampString = "579149278.889153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "5"
+            endingLineNumber = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,13 +72,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "List/ViewController.swift"
-            timestampString = "579060545.653716"
+            timestampString = "579223790.127064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "List.ViewController.textCellIdentifier.getter : Swift.String"
+                  moduleName = "List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rob/Documents/workspace_ios/coursera_ios_app_dev/List/List/ViewController.swift"
+                  timestampString = "579149655.9791631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "List.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; List.ViewController"
+                  moduleName = "List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rob/Documents/workspace_ios/coursera_ios_app_dev/List/List/ViewController.swift"
+                  timestampString = "579149655.979353"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "81">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "List.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;List.ViewController&gt;"
+                  moduleName = "List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rob/Documents/workspace_ios/coursera_ios_app_dev/List/List/ViewController.swift"
+                  timestampString = "579149655.979538"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "List/ViewController.swift"
+            timestampString = "579224509.83447"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
